@@ -1,7 +1,7 @@
 import pandas as pd
 
-previsores = pd.read_csv('entradas_breast.csv')
-classe = pd.read_csv('saidas_breast.csv')
+previsores = pd.read_csv('entradas-breast.csv')
+classe = pd.read_csv('saidas-breast.csv')
 
 from sklearn.model_selection import train_test_split
 previsores_treinamento, previsores_teste, classe_treinamento, classe_teste = train_test_split(previsores, classe, test_size=0.25)
@@ -9,6 +9,8 @@ previsores_treinamento, previsores_teste, classe_treinamento, classe_teste = tra
 import keras
 from keras.models import Sequential
 from keras.layers import Dense
+
+
 classificador = Sequential()
 classificador.add(Dense(units = 16, activation = 'relu', 
                         kernel_initializer = 'random_uniform', input_dim = 30))
@@ -25,7 +27,7 @@ classificador.compile(optimizer = otimizador, loss = 'binary_crossentropy',
 classificador.fit(previsores_treinamento, classe_treinamento,
                   batch_size = 10, epochs = 100)
 
-
+"""
 pesos0 = classificador.layers[0].get_weights()
 print(pesos0)
 print(len(pesos0))
@@ -39,3 +41,4 @@ precisao = accuracy_score(classe_teste, previsoes)
 matriz = confusion_matrix(classe_teste, previsoes)
 
 resultado = classificador.evaluate(previsores_teste, classe_teste)
+"""
