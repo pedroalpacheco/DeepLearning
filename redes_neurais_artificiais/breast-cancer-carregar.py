@@ -16,7 +16,7 @@ novo = np.array([[15.80, 8.34, 118, 900, 0.10, 0.26, 0.08, 0.134, 0.178,
 previsao = classificador.predict(novo)
 previsao = (previsao > 0.5)
 
-previsores = pd.read_csv('entradas_breast.csv')
-classe = pd.read_csv('saidas_breast.csv')
+previsores = pd.read_csv('entradas-breast.csv')
+classe = pd.read_csv('saidas-breast.csv')
 classificador.compile(loss='binary_crossentropy', optimizer='adam', metrics=['binary_accuracy'])
 resultado = classificador.evaluate(previsores, classe)

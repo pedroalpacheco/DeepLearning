@@ -27,7 +27,7 @@ classificador.compile(optimizer = otimizador, loss = 'binary_crossentropy',
 classificador.fit(previsores_treinamento, classe_treinamento,
                   batch_size = 10, epochs = 100)
 
-"""
+
 pesos0 = classificador.layers[0].get_weights()
 print(pesos0)
 print(len(pesos0))
@@ -41,4 +41,3 @@ precisao = accuracy_score(classe_teste, previsoes)
 matriz = confusion_matrix(classe_teste, previsoes)
 
 resultado = classificador.evaluate(previsores_teste, classe_teste)
-"""

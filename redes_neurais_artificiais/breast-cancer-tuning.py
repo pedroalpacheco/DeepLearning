@@ -5,8 +5,8 @@ from keras.layers import Dense, Dropout
 from keras.wrappers.scikit_learn import KerasClassifier
 from sklearn.model_selection import GridSearchCV
 
-previsores = pd.read_csv('entradas_breast.csv')
-classe = pd.read_csv('saidas_breast.csv')
+previsores = pd.read_csv('entradas-breast.csv')
+classe = pd.read_csv('saidas-breast.csv')
 
 def criarRede(optimizer, loos, kernel_initializer, activation, neurons):
     classificador = Sequential()

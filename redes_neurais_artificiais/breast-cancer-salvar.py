@@ -2,8 +2,8 @@ import pandas as pd
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 
-previsores = pd.read_csv('entradas_breast.csv')
-classe = pd.read_csv('saidas_breast.csv')
+previsores = pd.read_csv('entradas-breast.csv')
+classe = pd.read_csv('saidas-breast.csv')
 
 classificador = Sequential()
 classificador.add(Dense(units = 8, activation = 'relu', 
